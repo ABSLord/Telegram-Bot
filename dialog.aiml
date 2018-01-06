@@ -1,0 +1,97 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- dialog.aiml -->
+    <category>
+        <pattern> ПРИВЕТ </pattern>
+        <template>
+            <random>
+                <li> И тебе привет, <get name="name"/> </li>
+                <li> Дратути, <get name="name"/> </li>
+                <li> Дороу, <get name="name"/> </li>
+                <li> Приветик, <get name="name"/> </li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern> КАК ДЕЛА </pattern>
+        <template>
+            <random>
+                <li> хорошо </li>
+                <li> плохо </li>
+                <li> не оч </li>
+            </random>
+        </template>
+    </category>
+
+     <category>
+      <pattern> ПОЧЕМУ </pattern>
+      <that> ХОРОШО </that>
+      <template> потому что битками закупился в 2011! </template>
+    </category>
+
+    <category>
+      <pattern> ПОЧЕМУ </pattern>
+      <that> ПЛОХО </that>
+      <template> битки не успел купить, а теперь поздно((9(9((( </template>
+    </category>
+
+    <category>
+        <pattern> ДАВАЙ ПОБОЛТАЕМ </pattern>
+        <template> а о чем? </template>
+    </category>
+
+    <category>
+      <pattern> О КРИПТОВАЛЮТЕ </pattern>
+      <that>А О ЧЕМ</that>
+      <template>Давай <think><set name="topic">cryptocurrency</set></think></template>
+    </category>
+
+    <topic name = "CRYPTOCURRENCY">
+      <category>
+         <pattern> ПОКАЖИ ПОПУЛЯРНЫЕ КРИПТОВАЛЮТЫ </pattern>
+         <template>
+            Bitcoin(BTC)andLitecoin(LTC)andEthereum(ETH)andDogecoin(DOGE)andPeercoin(PPC)andNamecoin(NMC)andFeathercoin(FTC)
+         </template>
+      </category>
+
+      <category>
+         <pattern>СКАЖИ КУРС *</pattern>
+         <template>
+            курс <set name="curr"><star/></set>:
+         </template>
+      </category>
+
+      <category>
+         <pattern>ЧТО ТЫ ДУМАЕШЬ О *</pattern>
+         <template>
+            мои мысли о <set name="curr_info"><star/></set>:
+         </template>
+      </category>
+
+    </topic>
+
+    <category>
+        <pattern>*</pattern>
+        <that>А О ЧЕМ</that>
+        <template>неее, болтаю ток о криптовалюте</template>
+    </category>
+
+    <category>
+        <pattern>ПОКА</pattern>
+        <template>
+            покедова
+        </template>
+    </category>
+
+    <category>
+        <pattern> * </pattern>
+        <template>
+            <random>
+                <li> моя твоя не понимэ </li>
+                <li> аааа сложна </li>
+                <li> шо? Оо </li>
+            </random>
+        </template>
+    </category>
+
+</aiml>
